@@ -15,14 +15,14 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
 
-
-
-  namespace :public do
-    # URLの頭にしたい部分
-    root to: 'homes#top'
+ root to: 'public/homes#top'
+ get 'home/about' => 'homes#about', as: 'about'
     # アプリに対して1つ↑
     # 条件分岐
     # Bookers<% if user_signed_in? %>
+
+  namespace :public do
+    # URLの頭にしたい部分
     resources :items, only: [:index, :show]
     resources :customers, only: [:show, :edit, :update]
     get 'customers/unsubscribe' => 'customers#unsubscribe'
