@@ -38,5 +38,5 @@ class Admin::ItemsController < ApplicationController
       render 'edit'
     end  
   end
-  
+
 end
