@@ -15,19 +15,25 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
 
-
-
-  namespace :public do
-    # URLの頭にしたい部分
-    root to: 'homes#top'
+ root to: 'public/homes#top'
     # アプリに対して1つ↑
     # 条件分岐
     # Bookers<% if user_signed_in? %>
+
+  namespace :public do
+    get "home/about"=>"homes#about", as: "about"
+  
+    # URLの頭にしたい部分
     resources :items, only: [:index, :show]
-    resources :customers, only: [:show, :edit, :update]
+    get 'customers/my_page' => 'customers#show', as: "customer"
+    get 'customers/information/edit' => 'customers#edit', as: "customers_edit"
+    patch 'customers/information' => 'customers#update'
     get 'customers/unsubscribe' => 'customers#unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw'
-    resources :cart_items, only: [:index, :update, :create]
+    delete 'cart_items/destroy_all' => 'cart_items#destroy_all'
+    post 'orders/confirm', to: 'orders#confirm'
+    get "orders/complete" => "orders#complete", as: "complete"
+    resources :cart_items, only: [:index, :update, :create, :destroy]
     resources :orders, only: [:new, :create, :index, :show]
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]
   end
