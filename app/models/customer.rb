@@ -20,7 +20,7 @@ class Customer < ApplicationRecord
   validates :last_name,presence:true
   validates :first_name_kana,presence:true
   validates :last_name_kana,presence:true
-  validates :post_address,presence:true,length: { is: 7 }
+  validates :postal_code,presence:true,length: { is: 7 }
 
   def full_address
     '〒'+postal_code+' '+address
