@@ -10,3 +10,4 @@ Admin.create!(
     id: 1, email: "test@test",
     password: "test10",
 )
+# admin/sign_inでアドミンにログインできる

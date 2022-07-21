@@ -39,10 +39,10 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   end
 
   namespace :admin do
-    get '' => 'homes#top'
+    root to: 'homes#top'
     resources :customers, only: [:index, :show, :edit, :update]
     resources :genres, only: [:index, :create, :edit, :update]
-    resources :items, only: [:index, :new, :create, :update, :show]
+    resources :items, only: [:index, :new, :create, :update, :show, :edit]
     resources :orders, only: [:show, :update]
     resource :order_details, only: [:update]
   end

@@ -7,12 +7,10 @@ class Admin::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.admin_id = current_admin.id
     if @item.save
       redirect_to admin_item_path(@item)
-    else 
-      @items = Item.all
-      redirect_to 'new_admin_item_path', notice: "大変申し訳ありませんが記入漏れがあります"
+    else
+      redirect_to new_admin_item_path, notice: "大変申し訳ありませんが記入漏れがあります"
     end  
   end
 
@@ -24,7 +22,6 @@ class Admin::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    
   end
 
   def edit
@@ -32,11 +29,18 @@ class Admin::ItemsController < ApplicationController
   end
   
   def update
+    @item = Item.find(params[:id])
     if @item.update(item_params)
-      redirect_to public_item_path(@item)
+      redirect_to admin_item_path(@item), notice: "無事に更新されました"
     else
       render 'edit'
     end  
   end
+
+  private
+  def item_params
+    params.require(:item).permit(:name, :introduction, :genre_id, :price, :is_active, :image)
+  end
+
 
 end
