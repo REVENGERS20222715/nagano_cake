@@ -7,11 +7,12 @@
   <tbody>
     <% genres.each do |genre| %>
       <tr>
-        
-        <td><%= link_to customer_items_path(genre.id) do %>
-        <% ganre.name %><% end %></td>
-      　<td>
-       
+
+        <td><%#= link_to customer_items_path(genre.id) do %>
+          <%= genre.name %><%# end %>
+        </td>
+
+
       </tr>
     <% end %>
   </tbody>
