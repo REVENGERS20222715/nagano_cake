@@ -70,10 +70,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-  
-  config.hosts << "aa1c753b3d61471db24b8183e73ded11.vfs.cloud9.ap-northeast-1.amazonaws.com"
 
 end
