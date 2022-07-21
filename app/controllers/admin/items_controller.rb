@@ -9,7 +9,7 @@ class Admin::ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
       redirect_to admin_item_path(@item)
-    else 
+    else
       redirect_to new_admin_item_path, notice: "大変申し訳ありませんが記入漏れがあります"
     end  
   end
@@ -29,8 +29,9 @@ class Admin::ItemsController < ApplicationController
   end
   
   def update
+    @item = Item.find(params[:id])
     if @item.update(item_params)
-      redirect_to public_item_path(@item), notice: "無事に更新されました"
+      redirect_to admin_item_path(@item), notice: "無事に更新されました"
     else
       render 'edit'
     end  

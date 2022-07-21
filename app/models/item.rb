@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
 
     has_one_attached :image
-    belongs_to :genres
+    belongs_to :genre
     # has_many :customers, through: :cart_items, dependent: :destroy, source: :customer
     has_many :cart_items, dependent: :destroy
     has_many :order_details
@@ -11,4 +11,5 @@ class Item < ApplicationRecord
     validates :is_active, presence: true
     validates :price, presence: true
     validates :genre_id, presence: true
+    
 end

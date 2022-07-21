@@ -1,43 +1,46 @@
 <div class='col-md-8 offset-md-1'>
     <h2>商品一覧</h2>
-    <div class='row border-top border-bottom py-1 font-weight-bold'>
-        <div class='col-sm'>
-            <h4>商品ID</h4>
-        </div>
-        <div class='col-sm'>
-            <h4>商品名</h4>
-        </div>
-        <div class='col-sm'>
-            <h4>税抜価格</h4>
-        </div>
-        <div class='col-sm'>
-            <h4>ジャンル</h4>
-        </div>
-        <div class='col-sm'>
-            <h4>ステータス</h4>
-        </div>
-        
+    <!--<div class='row border-top border-bottom py-1 font-weight-bold'>-->
+        <table>
+            <thead>
+                <th class='col-sm-1'>
+                    <h4>商品ID</h4>
+                </th>
+                <th class='col-sm-2'>
+                    <h4>商品名</h4>
+                </th>
+                <th class='col-sm-2'>
+                    <h4>税抜価格</h4>
+                </th>
+                <th class='col-sm-2'>
+                    <h4>ジャンル</h4>
+                </th>
+                <th class='col-sm-3'>
+                    <h4>ステータス</h4>
+                </th>
+            </thead>
         <div class='jscroll'>
-            <% @items.each do |item| %>
                 <div class='row border-bottom py-1'>
-                    <div class='col-sm'>
-                        <tbody>
-                            <tr><%= item.id %>
-                            </tr>    
-                            <tr><%= link_to admin_item_path(item) do %>
-                                    <%= item.name %>
-                                <% end %>
-                            </tr>
-                            <tr><%= item.price %>
-                            </tr>
-                            <tr><%= item.genre_id.name %>
-                            </tr>
-                            <tr><%= item.is_active %>
-                            </tr>
-                        </tbody>
-                    </div>
+                            <tbody>
+                                <% @items.each do |item| %>
+                                <tr>
+                                <td class='col-sm-1'><%= item.id %>
+                                </td>
+                                <td class='col-sm-2'><%= link_to admin_item_path(item) do %>
+                                        <%= item.name %>
+                                    <% end %>
+                                </td>    
+                                <td class='col-sm-2'><%= item.price %>
+                                </td>
+                                <td class='col-sm-2'><%= item.genre.name %>
+                                </td>
+                                <td class='col-sm-2'><%= item.is_active %>
+                                </td>
+                                </tr>
+                                <% end %>   
+                            </tbody>
                 </div>
-            <% end %>    
+        </table>        
         </div>
-    </div>
+    <!--</div>-->
 </div>
