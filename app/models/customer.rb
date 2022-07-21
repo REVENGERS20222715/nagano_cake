@@ -21,14 +21,18 @@ class Customer < ApplicationRecord
   validates :first_name_kana,presence:true
   validates :last_name_kana,presence:true
   validates :postal_code,presence:true,length: { is: 7 }
+  # ちょうど７桁じゃないとバリデーションがかかって保存されない
 
   def full_address
     '〒'+postal_code+' '+address
   end
-
-  def full_name
-    first_name+' '+last_name
-  end
+  
+  # def customer_status
+  # end
+  
+  # def full_name
+  #   first_name+' '+last_name
+  # end
 
   def self.search(search,word)
     if search == "forward"
