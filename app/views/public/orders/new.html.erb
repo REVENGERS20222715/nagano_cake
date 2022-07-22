@@ -2,7 +2,7 @@
   <div class="row">
     <div class="mainContents col-sm-12 col-sm-push-4 col-md-12 col-md-push-4">
       <div class="row">
-        <%= image_tag '注文情報確認.jpeg', size:'600x60',class:"order-flow" %>
+        <%#= image_tag '注文情報確認.jpeg', size:'600x60',class:"order-flow" %>
       </div>
 
       <h4 class="subtitle mx-auto">お届け先とお支払い情報入力</h4>
@@ -10,22 +10,22 @@
       <div class="container form-contents">
         <h6 class="subtitle mx-auto">配送情報</h6>
         <%= form_with model: @order, url: public_orders_confirm_path, local: true do |f| %>
-          <%= render  "addresses/error", resource: @order %>
+          <%= render  "public/addresses/error", resource: @order %>
           <div class="address-list">
             <div class="address-select">
               <%= f.radio_button :address_number, 1, required: true%>
-              <%= f.label :address_number_1, "注文者の住所" %>
+              <%= f.label :address_number_1, "ご自身の住所" %>
             </div>
 
             <table class="table">
               <tbody>
                 <tr>
                   <th>宛名</th>
-                  <td><%= current_customer.last_name + current_customer.first_name %></td>
+                  <td><%= current_customer.last_name  %><%= current_customer.first_name %></td>
                   </tr>
                   <tr>
                   <th>住所</th>
-                  <td>〒<%= current_customer.postal_code + current_customer.address %></td>
+                  <td>〒<%= current_customer.postal_code %><%= current_customer.address %></td>
                 </tr>
               </tbody>
             </table>
