@@ -12,7 +12,7 @@ class Public::CartItemsController < ApplicationController
     if CartItem.find_by(item_id: @cart_item.item_id)
       @update_cart_item = CartItem.find_by(item_id: @cart_item.item_id)
       # 追加の数量をカートに入っている数量に足す
-      @cart_item.amount += @update_cart_item.amount
+      @cart_item.quantity += @update_cart_item.quantity
       @update_cart_item.destroy
     end
     
@@ -27,7 +27,7 @@ class Public::CartItemsController < ApplicationController
   
   def update
     @cart_item = CartItem.find(params[:id])
-    @cart_item.update(params[:cart_item],[:quantity])
+    @cart_item.update(cart_item_params)
     redirect_to public_cart_items_path
   end
   
