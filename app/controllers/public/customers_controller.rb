@@ -1,10 +1,20 @@
 class Public::CustomersController < ApplicationController
   def show
-    # @customer = Customer.find(params[:id])
+    @customer = current_customer
     @customers = Customer.all
   end
 
   def edit
+    @customer = current_customer
+  end
+
+  def update
+    @customer = current_customer
+    if @customer.update(customer_params)
+      redirect_to public_customer_path
+    else
+      render "edit"
+    end
   end
 
   def unsubscribe
@@ -14,7 +24,7 @@ class Public::CustomersController < ApplicationController
       @customer = current_customer
 
 
-      @customer.update(is_customer_status: true)
+      @customer.update(is_deleted: true)
       # ログアウトさせる
       reset_session
 
@@ -24,6 +34,6 @@ class Public::CustomersController < ApplicationController
 
     private
         def customer_params
-            params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :email, :postal_code, :address, :phone_number, :is_customer_status)
+            params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :email, :postal_code, :address, :telephone_number, :is_customer_status)
         end
 end

@@ -27,6 +27,8 @@ class Customer < ApplicationRecord
     '〒'+postal_code+' '+address
   end
   
+  
+  
   # def customer_status
   # end
   
