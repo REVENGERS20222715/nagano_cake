@@ -11,8 +11,9 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <header><%= render 'layouts/header' %></header>
     <%= yield %>
-    <%= render 'layouts/footer' %>
+    <div class="fixed-bottom"><footer><%= render 'layouts/footer' %></footer>
+    </div>
   </body>
 </html>
