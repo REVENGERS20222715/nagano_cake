@@ -1,7 +1,43 @@
-// Place all the styles related to the admin/homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/*@charset 'utf8';*/
 
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*.slide {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    padding-top: 61.8%;*/
+/*}*/
+
+/*.slide img {*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    top: 0;*/
+/*    left: 0; */
+/*    animation:slideshow 32s linear infinite;*/
+/*}*/
+
+/*@keyframes slideshow{*/
+/*    0%{*/
+/*        opacity: 0;*/
+/*    }*/
+/*    10%{*/
+/*        opacity: 1;*/
+/*    }*/
+/*    28%{*/
+/*        opacity: 1;*/
+/*    }*/
+/*    38%{*/
+/*        opacity: 0;*/
+/*    }*/
+    
+/*    100% {*/
+/*        opacity: 0;*/
+/*    }*/
+/*}*/
 
 .slideBox {
   height: 500px;
