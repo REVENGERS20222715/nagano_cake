@@ -1,19 +1,48 @@
+
 <div class='container'>
   <div class='row'>
-    <div class='col-md-3'>
+    <div class='col-md-2'>
       <p id="notice"></p>
       <%= render 'genre_index', genres: @genres %>
     </div>
     <p id="notice"></p>
-    <div class='col-md-8 offset-md-1'>
-        <h3>ようこそ、ながのCAKEへ！
-このサイトは、ケーキ販売のECサイトになります。
-会員でない方も商品の閲覧はできますが、
-購入には会員登録が必要になります。</h3>
+        <div class='col-md-10'>
+                <h3>ようこそ、ながのCAKEへ！
+        このサイトは、ケーキ販売のECサイトになります。
+        会員でない方も商品の閲覧はできますが、
+        購入には会員登録が必要になります。</h3>
 
-      <h2>新着商品</h2>
-      <%#= render 'items/index', items: @items%>
+
+                <h2>新着商品</h2>
+        </div>
+
+
+
+
+
+            <% @items.each do |item| %>
+            
+              <div class="item-box">
+                <%= link_to public_item_path(item) do %>
+                  <div class="item-image">
+                      <% if item.image.attached? %>
+                        <%= image_tag item.image, size: "200x150" %>
+                      <% else %>
+                        <%= image_tag 'no_image.jpeg', size: "200x150" %>
+                      <% end %>
+                  </div>
+                  <div class="item-neme-price">
+                    <div class="item-name text-center"><%= item.name %></div>
+                    <div class="item-price text-center">¥<%= (item.price * 110 / 100).to_s(:delimited) %>(税込)</div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+
+
+
       <%#= paginate @itemss %>
-    </div>
+
   </div>
 </div>

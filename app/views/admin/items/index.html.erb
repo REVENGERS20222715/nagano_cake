@@ -1,5 +1,5 @@
 <div class='col-md-8 offset-md-1'>
-    <h2>商品一覧</h2>
+    <h2>商品一覧　　　　　　　　　　　　　　　　　　　　　　　　　　<%= link_to new_admin_item_path do %><i class="fas fa-plus"></i><% end %></h2>
     <!--<div class='row border-top border-bottom py-1 font-weight-bold'>-->
         <table>
             <thead>
@@ -29,7 +29,7 @@
                                 <td class='col-sm-2'><%= link_to admin_item_path(item) do %>
                                         <%= item.name %>
                                     <% end %>
-                                </td>    
+                                </td>
                                 <td class='col-sm-2'><%= item.price %>
                                 </td>
                                 <td class='col-sm-2'><%= item.genre.name %>
@@ -37,10 +37,10 @@
                                 <td class='col-sm-2'><%= item.is_active %>
                                 </td>
                                 </tr>
-                                <% end %>   
+                                <% end %>
                             </tbody>
                 </div>
-        </table>        
+        </table>
         </div>
     <!--</div>-->
 </div>
