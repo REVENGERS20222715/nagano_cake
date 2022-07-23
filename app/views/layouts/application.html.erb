@@ -30,7 +30,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
 
    </head>
 
@@ -45,7 +45,7 @@
             <ul class="nav justify-content-end">
               <li class="nav-item btn btn-outline-light"><%= link_to "商品一覧", admin_items_path, class: 'nav-link text-dark' %></li>
               <li class="nav-item btn btn-outline-light"><%= link_to "会員一覧", admin_customers_path, class: 'nav-link text-dark' %></li>
-              <li class="nav-item btn btn-outline-light"><%= link_to "注文履歴一覧", admin_orders_path, class: 'nav-link text-dark' %></li>
+              <li class="nav-item btn btn-outline-light"><%= link_to "注文履歴一覧", admin_root_path, class: 'nav-link text-dark' %></li>
               <li class="nav-item btn btn-outline-light"><%= link_to "ジャンル一覧", admin_genres_path, class: 'nav-link text-dark' %></li>
               <li class="nav-item btn btn-outline-light"><%= link_to "ログアウト",  destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %></li>
             </ul>
@@ -70,7 +70,7 @@
     <body class="body-bg">
       <%= yield %>
     </body>
-    
+
     <div class="fixed-bottom">
     <footer class="text-dark pt-5 pb-3">
       <div class='container'>
