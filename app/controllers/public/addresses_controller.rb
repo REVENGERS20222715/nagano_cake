@@ -1,5 +1,6 @@
 class Public::AddressesController < ApplicationController
     before_action :authenticate_customer!
+    before_action :current_customer!
   
   def index
     @addresses = current_customer.addresses.all
