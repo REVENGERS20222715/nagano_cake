@@ -2,7 +2,7 @@
   <div class="row">
     <div class="mainContents col-sm-12 col-sm-push-4 col-md-12 col-md-push-4">
       <div class="row">
-        <%= image_tag '注文内容確認.jpeg', size:'600x60',class:"order-flow" %>
+        <%#= image_tag '注文内容確認.jpeg', size:'600x60',class:"order-flow" %>
       </div>
 
       <h4 class="subtitle mx-auto">ご注文内容確認</h4>
@@ -69,7 +69,7 @@
           &emsp;<%= @order.name %>
         </div>
         <div class= "orderconfirmation text-center">
-          <%= form_with model: @order, url: orders_path, method: :post, local: true do |f| %>
+          <%= form_with model: @order, url: public_orders_path, method: :post, local: true do |f| %>
             <%= f.hidden_field :postal_code %>
             <%= f.hidden_field :address %>
             <%= f.hidden_field :name %>

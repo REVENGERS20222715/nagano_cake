@@ -42,9 +42,9 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     # address_numberの値が"1"のとき
     if params[:order][:address_number] == "1"
-      @order.post_code = current_customer.post_code
+      @order.postal_code = current_customer.postal_code
       @order.address = current_customer.address
-      @order.name = current_customer.last_name + current_customer.first_name
+      # @order.name = current_customer.last_name + current_customer.first_name
     # address_numberの値が"2"のとき
     elsif params[:order][:address_number] == "2"
       @address = Address.find(params[:order][:address_id])
@@ -60,8 +60,8 @@ class Public::OrdersController < ApplicationController
   end
 
   def create
-    @order = current_customer.orders.new(order_params)
-    @order.save
+    # @order = current_customer.orders.new(order_params)
+    # @order.save
     #カート商品を注文詳細へ保存
     @cart_items = current_customer.cart_items.all
     @cart_items.each do |cart_item|
@@ -75,10 +75,10 @@ class Public::OrdersController < ApplicationController
     end
     #注文後にカート内の商品を削除
     @cart_items.destroy_all
-    redirect_to completion_orders_path
+    redirect_to public_complete_path
   end
 
-  def completion
+  def complete
   end
 
   def index
