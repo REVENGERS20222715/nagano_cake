@@ -38,6 +38,15 @@
                         </tr>
 
                 </table>
+            <strong class="information-link">登録情報　　　　</strong>
+            <%= link_to public_addresses_path(current_customer) do %>
+              <button type="button" class="btn btn-primary">編集する</button>
+            <% end %><br><br>
+
+            <strong class="information-link">注文履歴一覧　　</strong>
+            <%= link_to public_orders_path(current_customer) do %>
+              <button type="button" class="btn btn-primary">編集する</button>
+            <% end %>
     </div>
   </div>
 </div>

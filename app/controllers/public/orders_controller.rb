@@ -2,13 +2,13 @@ class Public::OrdersController < ApplicationController
 #   def new
 #     @order = Order.new
 #   end
-  
+
 #   def confirm
 #   end
 
 #   def complete
 #   end
-  
+
 #   def create
 #     @order = Order.find(params[:id])
 #     @order.customer_id = current_customer.id
@@ -26,7 +26,6 @@ class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
   # sort機能のヘルパーメソッド
   # ソートキーと順序の方向（asc/desc）
-  before_action :current_customer!
   helper_method :sort_column, :sort_direction
 
   def new
@@ -109,7 +108,7 @@ class Public::OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:payment_method, :postal_code, :address, :name, :price, :status)
   end
-  
+
   # def order_details
   #   params.require(:order_details).permit(:order_id, :item_id, :price, :amount, :making_status)
   # end
