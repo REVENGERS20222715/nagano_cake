@@ -12,4 +12,8 @@ class OrderDetail < ApplicationRecord
     return (array.sum * 1.1).floor
     end
 
+    def subtotal
+    item.with_tax_price * amount
+    end
+
 end

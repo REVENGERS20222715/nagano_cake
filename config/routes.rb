@@ -22,7 +22,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
   namespace :public do
     get "home/about"=>"homes#about", as: "about"
-  
+
     # URLの頭にしたい部分
     resources :items, only: [:index, :show]
     get 'customers/my_page' => 'customers#show', as: "customer"
@@ -46,7 +46,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     resources :orders, only: [:show, :update]
     resource :order_details, only: [:update]
   end
-  
+
 
   # namespace :admin do
   #   get 'orders/show'
@@ -95,6 +95,6 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   #   get 'homes/top'
   #   get 'homes/about'
   # end
-  
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

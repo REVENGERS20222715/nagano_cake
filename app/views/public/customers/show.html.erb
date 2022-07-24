@@ -38,6 +38,21 @@
                         </tr>
 
                 </table>
+                <strong class="information-link">配送先　　　　</strong>
+
+                    <%= link_to public_addresses_path(current_customer) do %>
+
+                    <button type="button" class="btn btn-primary">一覧を見る</button>
+
+                    <% end %><br><br>
+
+                    <strong class="information-link">注文履歴　　　</strong>
+
+                    <%= link_to public_orders_path(current_customer) do %>
+
+                    <button type="button" class="btn btn-primary">一覧を見る</button>
+
+                    <% end %>
     </div>
   </div>
 </div>
