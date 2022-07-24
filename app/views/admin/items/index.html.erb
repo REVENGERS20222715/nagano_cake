@@ -34,7 +34,11 @@
                                 </td>
                                 <td class='col-sm-2'><%= item.genre.name %>
                                 </td>
-                                <td class='col-sm-2'><%= item.is_active %>
+                                <% if item.is_active? == false %>
+                                    <td class="text-danger">販売停止中</td>
+                                <% else %>
+                                    <td class="text-success">販売中</td>
+                                <% end %>
                                 </td>
                                 </tr>
                                 <% end %>

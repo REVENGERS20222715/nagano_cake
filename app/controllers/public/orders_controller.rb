@@ -54,23 +54,23 @@ class Public::OrdersController < ApplicationController
       @order.name = @address.name
     # address_numberの値が"3"のとき
     elsif params[:order][:address_number] == "3"
-      @order.post_code = params[:order][:post_code]
+      @order.postal_code = params[:order][:postal_code]
       @order.address     = params[:order][:address]
       @order.name        = params[:order][:name]
     end
   end
 
   def create
-    # @order = current_customer.orders.new(order_params)
-    # @order.save
+    @order = current_customer.orders.new(order_params)
+    @order.save
     #カート商品を注文詳細へ保存
     @cart_items = current_customer.cart_items.all
     @cart_items.each do |cart_item|
-      @order_details = OrderDetail.new
+      @order_details = OrderDetail.new(params.permit(:item_id, :order_id, :amount, :price, :price))
       @order_details.order_id = @order.id
       @order_details.item_id = cart_item.item.id
       @order_details.price = cart_item.item.with_tax_price
-      @order_details.amount = cart_item.amount
+      @order_details.amount = cart_item.quantity
       @order_details.making_status = 0
       @order_details.save
     end
@@ -107,9 +107,9 @@ class Public::OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:payment_method, :post_code, :address, :name, :total_price, :status)
+    params.require(:order).permit(:payment_method, :postal_code, :address, :name, :price, :status)
   end
-
+  
   # def order_details
   #   params.require(:order_details).permit(:order_id, :item_id, :price, :amount, :making_status)
   # end
