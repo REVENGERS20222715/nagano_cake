@@ -6,7 +6,7 @@
                     <tbody>
                             <tr><label for='inputimage'>商品画像</label>
                                 <%= image_tag @item.image, size: '60x60' if @item.image.attached? %>
-                                <%= f.file_field :image %>
+                                <%= f.file_field :image, accept: "image/*" %>
                             </tr>
                             <tr><label for='itemname'>商品名</label>
                                 <%= f.text_field :name, rows: '5', id:'item[name]', placeholder: "商品名", class: 'form-control' %>
@@ -23,7 +23,7 @@
                                     <%= f.radio_button :is_active, true %>
                                     <%= f.label :is_active, '販売中', value: true %>
                                     <%= f.radio_button :is_active, false %>
-                                    <%= f.label :is_action, '販売停止中', value: false %>
+                                    <%= f.label :is_active, '販売停止中', value: false %>
                             </tr>
                             <div>
                                 <%= f.submit "新規登録", class: 'btn btn-success' %>
