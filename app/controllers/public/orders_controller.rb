@@ -26,6 +26,7 @@ class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
   # sort機能のヘルパーメソッド
   # ソートキーと順序の方向（asc/desc）
+  before_action :current_customer!
   helper_method :sort_column, :sort_direction
 
   def new

@@ -1,5 +1,5 @@
 class Admin::GenresController < ApplicationController
-  # before_action :authenticate_admin!,only: [:create,:edit,:update,:index]
+  before_action :authenticate_admin!
 
   def new
   @item = current_customer.items.build

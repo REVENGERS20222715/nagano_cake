@@ -30,26 +30,30 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
 
    </head>
 
   <body class="d-flex flex-column vh-100">
-    <header class="shadow-sm mb-5">
-      <nav class="navbar navbar-expand-lg navbar-light">
+    <header class="shadow-sm mb-5" >
+      <nav class="navbar expand-lg navbar-dark" style="background-color: #BBBBBB;">
         <div class="container">
-          <%= link_to  "/" do %>
-          <%#= image_tag "top.png", size: "50x50" %>
-          <% end %>
           <% if admin_signed_in? %>
+            <%= link_to admin_root_path do %>
+              <%= image_tag "logo.jpg", size: "100x100" %>
+            <% end %>
+
             <ul class="nav justify-content-end">
               <li class="nav-item btn btn-outline-light"><%= link_to "商品一覧", admin_items_path, class: 'nav-link text-dark' %></li>
               <li class="nav-item btn btn-outline-light"><%= link_to "会員一覧", admin_customers_path, class: 'nav-link text-dark' %></li>
-              <li class="nav-item btn btn-outline-light"><%= link_to "注文履歴一覧", admin_orders_path, class: 'nav-link text-dark' %></li>
+              <li class="nav-item btn btn-outline-light"><%= link_to "注文履歴一覧", admin_root_path, class: 'nav-link text-dark' %></li>
               <li class="nav-item btn btn-outline-light"><%= link_to "ジャンル一覧", admin_genres_path, class: 'nav-link text-dark' %></li>
               <li class="nav-item btn btn-outline-light"><%= link_to "ログアウト",  destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %></li>
             </ul>
           <% elsif customer_signed_in? %>
+            <%= link_to root_path do %>
+              <%= image_tag "logo.jpg", size: "100x100" %>
+            <% end %>
             <ul class="nav justify-content-end">
               <li class="nav-item btn btn-outline-light"><%= link_to "マイページ", public_customer_path(current_customer.id), class: 'nav-link text-dark' %></li>
               <li class="nav-item btn btn-outline-light"><%= link_to "商品一覧", public_items_path, class: 'nav-link text-dark' %></li>
@@ -57,6 +61,9 @@
               <li class="nav-item btn btn-outline-light"><%= link_to "ログアウト",  destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' %></li>
             </ul>
           <% else %>
+            <%= link_to root_path do %>
+              <%= image_tag "logo.jpg", size: "100x100" %>
+            <% end %>
             <ul class="nav justify-content-end">
               <li class="nav-item btn btn-outline-light"><%= link_to "About", public_about_path, class: 'nav-link text-dark' %></li>
               <li class="nav-item btn btn-outline-light"><%= link_to "商品一覧", public_items_path, class: 'nav-link text-dark' %></li>
@@ -70,7 +77,7 @@
     <body class="body-bg">
       <%= yield %>
     </body>
-    
+
     <div class="fixed-bottom">
     <footer class="text-dark pt-5 pb-3">
       <div class='container'>
@@ -79,7 +86,7 @@
     	      <div class=".">
               <a href="#" class="mx-1 text-dark"><i class="fab fa-twitter fa-lg"></i></a>
               <a href="#" class="mx-5 text-dark"><i class="fab fa-instagram fa-lg"></i></a>
-              <a href="#" class="mx-1 text-dark"><i class="fa-brands fa-facebook fa-lg"></i></a>
+              <a href="#" class="mx-1 text-dark"><i class="fab fa-facebook-square"></i></a>
               <a href="#" class="mx-5 text-dark"><i class="far fa-envelope fa-lg"></i></a>
             </div>
           <p class="text-center">© REVENGERS </p>
