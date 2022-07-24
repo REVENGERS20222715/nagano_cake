@@ -7,9 +7,9 @@
   <tbody>
     <% genres.each do |genre| %>
       <tr>
-
-        <td><%#= link_to customer_items_path(genre.id) do %>
-          <%= genre.name %><%# end %>
+　　　　<!--                              カラム名　genre(変数)のid-->
+        <td><%= link_to public_items_path(genre_id: genre.id, genre_name: genre.name) do %>
+          <%= genre.name %><% end %>
         </td>
 
 
