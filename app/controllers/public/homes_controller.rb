@@ -6,8 +6,7 @@ class Public::HomesController < ApplicationController
   end
 
   def index
-
-    @itemss = Item.all.page(params[:page]).per(4)
+　　@itemss = Item.all.page(params[:page]).per(4)
   end
 
   def about

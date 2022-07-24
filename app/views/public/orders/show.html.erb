@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <%= render "public/addresses/sidebar", genres: @genres %>
+    <%#= render "public/addresses/sidebar", genres: @genres %>
     <div class="mainContents col-sm-9 col-sm-push-3 col-md-9 col-md-push-3">
       <h2 class="ordertitle">注文履歴詳細</h2>
-    
+
       <div class="row">
         <div class="col-md-8">
           <h4 class="title">注文情報</h4>
@@ -29,7 +29,7 @@
             </tbody>
           </table>
         </div>
-      
+
         <div class="col-md-4">
           <h4 class="title">請求情報</h4>
             <table class="table">
@@ -44,13 +44,13 @@
                 <tr>
                   <td><%= @total.to_s(:delimited) %></td>
                   <td><%= @order.shipping_cost %>円</td>
-                  <td><%= @order.total_price.to_s(:delimited) %>円</td>
+                  <td><%= @order.price.to_s(:delimited) %>円</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-      
+
         <div class="row">
           <div class="col-md-9">
             <h4 class="title">注文内容</h4>

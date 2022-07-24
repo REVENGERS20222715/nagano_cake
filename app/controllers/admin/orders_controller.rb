@@ -1,10 +1,10 @@
 class Admin::OrdersController < ApplicationController
   before_action :authenticate_admin!
 
-  
+
   def show
     @order = Order.find(params[:id])
-    @customer = @order.admin
+    @order_details = @order.order_details
   end
 
   def update
@@ -19,6 +19,12 @@ class Admin::OrdersController < ApplicationController
       end
     end
     redirect_to admin_order_path
+  end
+
+  private
+  def order_params
+   params.require(:order).permit(:customer_id, :name, :postal_code, :address, :payment_method, :status, :price, :shipping_cost )
+
   end
 
 end
