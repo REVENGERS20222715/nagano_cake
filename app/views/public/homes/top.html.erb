@@ -1,48 +1,42 @@
-
-<div class='container'>
+<div class='container-fluid'>
   <div class='row'>
     <div class='col-md-2'>
       <p id="notice"></p>
       <%= render 'genre_index', genres: @genres %>
     </div>
     <p id="notice"></p>
-        <div class='col-md-10'>
-                <h3>ようこそ、ながのCAKEへ！
-        このサイトは、ケーキ販売のECサイトになります。
-        会員でない方も商品の閲覧はできますが、
-        購入には会員登録が必要になります。</h3>
+    <div class='col-md-10'>
+      <div align="center">
+        <h3>ようこそ、ながのCAKEへ！このサイトは、ケーキ販売のECサイトになります。<br>会員でない方も商品の閲覧はできますが、購入には会員登録が必要になります。<br><br><br><br><br><br></h3>
 
 
-                <h2>新着商品</h2>
-        </div>
-
-
-
-
-
+        <h2>新着商品</h2>
+          <div class='row'>
+            <br>
             <% @items.each do |item| %>
-            
               <div class="item-box">
+
                 <%= link_to public_item_path(item) do %>
                   <div class="item-image">
-                      <% if item.image.attached? %>
-                        <%= image_tag item.image, size: "200x150" %>
-                      <% else %>
-                        <%= image_tag 'no_image.jpeg', size: "200x150" %>
-                      <% end %>
+                    <% if item.image.attached? %>
+                      <%= image_tag item.image, size: "300x225" %>
+                    <% else %>
+                      <%= image_tag 'no_image.jpeg', size: "300x225" %>
+                    <% end %>
                   </div>
-                  <div class="item-neme-price">
+                  <div class="item-name-price">
                     <div class="item-name text-center"><%= item.name %></div>
                     <div class="item-price text-center">¥<%= (item.price * 110 / 100).to_s(:delimited) %>(税込)</div>
                   </div>
                 <% end %>
+
               </div>
-            </div>
-        <% end %>
-
-
-
-      <%#= paginate @itemss %>
-
+            <% end %>
+          </div>
+          <div class='col-md-10'>
+            <%= paginate @items %>
+          </div>
+      </div>
+    </div>
   </div>
 </div>
