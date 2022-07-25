@@ -14,28 +14,27 @@
           <div class='row'>
             <br>
             <% @items.each do |item| %>
-              <div class="item-box">
-
-                <%= link_to public_item_path(item) do %>
-                  <div class="item-image">
-                    <% if item.image.attached? %>
-                      <%= image_tag item.image, size: "300x225" %>
-                    <% else %>
-                      <%= image_tag 'no_image.jpeg', size: "300x225" %>
-                    <% end %>
-                  </div>
-                  <div class="item-name-price">
-                    <div class="item-name text-center"><%= item.name %></div>
-                    <div class="item-price text-center">¥<%= (item.price * 110 / 100).to_s(:delimited) %>(税込)</div>
-                  </div>
-                <% end %>
-
+              <div class='col-md-3'>
+                <div class="item-box">
+                  <%= link_to public_item_path(item) do %>
+                    <div class="item-image">
+                      <% if item.image.attached? %>
+                        <%= image_tag item.image, size: "280x210" %>
+                      <% else %>
+                        <%= image_tag 'no_image.jpeg', size: "280x210" %>
+                      <% end %>
+                    </div>
+                    <div class="item-name-price">
+                      <div class="item-name text-center"><%= item.name %></div>
+                      <div class="item-price text-center">¥<%= (item.price * 110 / 100).to_s(:delimited) %>(税込)</div>
+                    </div>
+                  <% end %>
+                </div>
               </div>
             <% end %>
           </div>
-          <div class='col-md-10'>
-            <%= paginate @items %>
-          </div>
+
+          <%= paginate @items %>
       </div>
     </div>
   </div>

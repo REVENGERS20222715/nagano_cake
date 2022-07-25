@@ -41,15 +41,14 @@
                   <th><%= f.label :メールアドレス %></th>
                   <td><%= f.text_field :email , class:"form-control"%></td><th></th>
                 </tr>
+
+                <div class="form-group">
+                    <th><input type="submit" name="commit" value="編集内容を保存" class="btn btn-outline-dark" data-disable-with="Update Genre"></th><td></td>
+                    <th><%= link_to public_customers_unsubscribe_path(current_customer) do %>
+                         <button type="button" class="btn btn-outline-dark">退会する</button>
+                    <% end %></th>
+                </div>
               </table>
-              <div class="form-group">
-                  <input type="submit" name="commit" value="編集内容を保存" class="btn btn-success" data-disable-with="Update Genre">
-
-
-                  <%= link_to public_customers_unsubscribe_path(current_customer) do %>
-                       <button type="button" class="btn btn-danger">退会する</button>
-                  <% end %>
-              </div>
           <% end %>
 
     </div>

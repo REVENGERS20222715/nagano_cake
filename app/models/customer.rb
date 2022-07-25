@@ -5,7 +5,7 @@ class Customer < ApplicationRecord
   # has_many :items, through: :cart_items, dependent: :destroy, source: :item
   has_many :cart_items, dependent: :destroy
   has_many :orders
-  
+
   # enum is_active: {Available: true, Invalid: false}
   #   def active_for_authentication?
   #       super && (self.is_active === "Available")
@@ -15,7 +15,7 @@ class Customer < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
+
   validates :first_name,presence:true
   validates :last_name,presence:true
   validates :first_name_kana,presence:true
@@ -26,12 +26,12 @@ class Customer < ApplicationRecord
   def full_address
     '〒'+postal_code+' '+address
   end
-  
-  
-  
+
+
+
   # def customer_status
   # end
-  
+
   # def full_name
   #   first_name+' '+last_name
   # end
