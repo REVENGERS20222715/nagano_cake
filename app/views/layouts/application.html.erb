@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <html lang="ja">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="image/css" href="css/slick.css"/>
+   <link rel="stylesheet" type="image/css" href="css/slick-theme.css"/>
     <title>NaganoCake</title>
 
     <%= csrf_meta_tags %>
@@ -12,7 +17,7 @@
   </head>
 
   <body class="d-flex flex-column vh-100">
-    <header class="shadow-sm mb-5" >
+    <header class="js_shadow-sm mb-5" >
       <nav class="navbar expand-lg navbar-dark" style="background-color: #BBBBBB;">
 
         <div class="container">
@@ -53,6 +58,14 @@
     </header>
     <body class="body-bg">
       <%= yield %>
+      <!--<script src="application.js"></script>-->
+      <!--<script type="text/javascript" src="js/slick.js"></script>-->
+      <!--<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>-->
+      <!--<script type="text/javascript" src="js/slick.js"></script>-->
+      
+      <script>
+       $('.slider').slick();
+      </script>
     </body>
 
 

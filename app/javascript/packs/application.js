@@ -17,3 +17,20 @@ import '@fortawesome/fontawesome-free/js/all'
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+(document).on('turbolinks:load', function(){
+  ('.slider').slick({
+    autoplay:true, // 自動再生
+    autoplaySpeed: 3000 // 再生速度（ミリ秒）
+  });
+});
+
+
+
+// ('.autoplay').slick({
+//   slidesToShow: 3,
+//   slidesToScroll: 1,
+//   autoplay: true,
+//   autoplaySpeed: 2000,
+// });
