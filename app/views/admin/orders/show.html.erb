@@ -120,16 +120,6 @@
   <% end %>
 </table>
 
-          <td>
-            <%= form_with model: @order_details, url: admin_order_details_path(@order_details), local: true do |f| %>
-                    <%= f.select :making_status, [["製作不可",'cannot'], ["製作待ち",'awaiting'], ["製作中",'in_production'], ["製作完了",'complete'] ]%>
-                    <%= f.submit "更新", class: 'btn btn-primary' %>
-            <% end %>
-          </td>
-         </tr>
-        </tbody>
-        <% end %>
-      </table>
     </div>
     <div class='col-md-3'>
       <p><strong>商品合計</strong>　　　<%= (@order.price - @order.shipping_cost).to_s(:delimited)%>円</p>
