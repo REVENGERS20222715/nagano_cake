@@ -17,3 +17,8 @@ import '@fortawesome/fontawesome-free/js/all'
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree .   ←これが一番後ろにこないと、うまく動きません
