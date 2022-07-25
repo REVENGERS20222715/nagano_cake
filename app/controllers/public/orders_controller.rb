@@ -48,7 +48,7 @@ class Public::OrdersController < ApplicationController
     # address_numberの値が"2"のとき
     elsif params[:order][:address_number] == "2"
       @address = Address.find(params[:order][:address_id])
-      @order.post_code = @address.post_code
+      @order.postal_code = @address.postal_code
       @order.address = @address.address
       @order.name = @address.name
     # address_numberの値が"3"のとき

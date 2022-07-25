@@ -11,14 +11,14 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.update(order_params)
     @order_details = @order.order_details
-
-    if @order.status == "入金確認"
-      @order_details.each do |order_detail|
-        order_detail.make_status = "製作待ち"
-        order_detail.save
-      end
+ # 注文ステータスが"入金確認"になったら製作ステータスを"製作待ち"
+    if @order.status == "payment_confirmation"
+      # @order_details.each do |order_detail|
+        # order_detail.making_status = "製作待ち"
+        @order.order_details.update(making_status: "awaiting")
+      # end
     end
-    redirect_to admin_order_path
+    redirect_to admin_order_path(@order)
   end
 
   private
