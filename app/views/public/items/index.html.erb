@@ -1,4 +1,4 @@
-<div class='container'>
+<div class='container-fluid'>
   <div class='row'>
     <div class='col-md-2'>
   		<%= render 'public/homes/genre_index', genres: @genres %>
@@ -8,26 +8,26 @@
 
   		<h3 class="title"><%= @item_name %>一覧<span>（全<%= @items.count %>件）</span></h3>
   		<div class="row">
-    <% @items.each do |item| %>
-      <div class="col-md-3">
-        <div class="item-box">
-          <%= link_to public_item_path(item) do %>
-            <div class="item-image">
-                <% if item.image.attached? %>
-                  <%= image_tag item.image, size: "200x150" %>
-                <% else %>
-                  <%= image_tag 'no_image.jpeg', size: "200x150" %>
-                <% end %>
+        <% @items.each do |item| %>
+          <div class="col-md-3">
+            <div class="item-box">
+              <%= link_to public_item_path(item) do %>
+                <div class="item-image">
+                    <% if item.image.attached? %>
+                      <%= image_tag item.image, size: "280x210" %>
+                    <% else %>
+                      <%= image_tag 'no_image.jpeg', size: "280x210" %>
+                    <% end %>
+                </div>
+                <div class="item-neme-price">
+                  <div class="item-name text-center"><%= item.name %></div>
+                  <div class="item-price text-center">¥<%= (item.price * 110 / 100 ).to_s(:delimited) %>(税込)</div>
+                </div>
+              <% end %>
             </div>
-            <div class="item-neme-price">
-              <div class="item-name text-center"><%= item.name %></div>
-              <div class="item-price text-center">¥<%= (item.price * 110 / 100 ).to_s(:delimited) %>(税込)</div>
-            </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
   	</div>
   </div>
 </div>

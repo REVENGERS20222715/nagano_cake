@@ -17,6 +17,10 @@ class Public::CustomersController < ApplicationController
     else
       render "edit"
     end
+    # if @customer == @customer.(is_deleted: true)
+    #   reset_session
+    #   redirect_to root_path
+    # end
   end
 
   def unsubscribe
