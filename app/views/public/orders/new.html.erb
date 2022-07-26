@@ -2,7 +2,6 @@
   <div class="row">
     <div class="mainContents col-sm-12 col-sm-push-4 col-md-12 col-md-push-4">
       <div class="row">
-        <%#= image_tag '注文情報確認.jpeg', size:'600x60',class:"order-flow" %>
       </div>
 
       <h4 class="subtitle mx-auto">お届け先とお支払い情報入力</h4>
@@ -22,8 +21,8 @@
                 <tr>
                   <th>宛名</th>
                   <td><%= current_customer.last_name  %><%= current_customer.first_name %></td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                   <th>住所</th>
                   <td>〒<%= current_customer.postal_code %><%= current_customer.address %></td>
                 </tr>
@@ -37,7 +36,7 @@
             </div>
             &emsp; <%= f.select :address_id, options_from_collection_for_select(@addresses.all, :id, :full_address) %>
           </div>
-         
+
           <div class="address-list">
             <div class="address-select">
               <%= f.radio_button :address_number, 3 ,required: true%>
@@ -58,7 +57,7 @@
               </tr>
             </table>
           </div>
-          
+
           <h6 class="subtitle mx-auto">お支払い方法</h6>
           <div class="pay-list">
             <div class="pay-select">
@@ -70,7 +69,7 @@
               <%= f.label :payment_method, Order.payment_methods_i18n[:transfer]%>
             </div>
           </div>
-              
+
           <div class= "row justify-content-center">
             <%= f.submit "確認画面へ進む", class: 'form-button' %>
           </div>

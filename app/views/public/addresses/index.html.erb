@@ -1,11 +1,9 @@
 <div class="container">
     <div class="row">
-        <%#= render "layouts/sidebar", genres: @genres %>
         <div class="mainContents col-sm-9 col-sm-push-3 col-md-9 col-md-push-3">
             <h3 class="subtitle">配送先登録/一覧</h3>
             <div class="container form-contents">
                 <%= form_with model: @address, url: public_addresses_path, local: true do |f| %>
-                    <%#= render  "customer/shared/error_messages", resource: @address %>
                     <div class="field form-group row">
                         <div class="col-md-12 mb-6">
                         <%= f.label :"郵便番号(ハイフンなし)", class:"form-label" %>
