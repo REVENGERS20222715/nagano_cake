@@ -1,3 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+
+
+.top1 {
+    position: absolute;
+    // 親の要素の左端を起点として移動
+    top: 10px;
+    left: 300px;
+}
