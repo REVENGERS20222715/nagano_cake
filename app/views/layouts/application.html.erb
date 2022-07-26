@@ -6,15 +6,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <div style="background-color: #fffaf0;">
-    <body class="d-flex flex-column vh-100">
+
+    <body class="d-flex flex-column vh-100" style="background-color: #fffaf0;">
       <header class="shadow-sm mb-5" >
         <nav class="navbar expand-lg navbar-dark" style="background-color: #BBBBBB;">
-  
+
           <div class="container">
             <% if admin_signed_in? %>
               <%= link_to admin_root_path do %>
@@ -51,9 +50,10 @@
           </div>
         </nav>
       </header>
-        <body class="body-by">
+        <main class="body-by">
           <%= yield %>
-        </body>
+
+        </main>
       <footer class="text-dark pt-5 pb-3">
         <div class='container'>
     	    <div class='row'>
@@ -68,40 +68,4 @@
          </div>
       </footer>
     </body>
-  </div>  
 </html>
-
-<!--<footer class="footer mt-auto py-3 bg-light">-->
-<!--    <div class="container">-->
-<!--       <div class='row'>
-    	     <div class='mx-auto'>
-              <a href="#" class="mx-1 text-dark"><i class="fab fa-twitter fa-lg"></i></a>
-              <a href="#" class="mx-5 text-dark"><i class="fab fa-instagram fa-lg"></i></a>
-              <a href="#" class="mx-1 text-dark"><i class="fab fa-facebook-square"></i></a>
-              <a href="#" class="mx-5 text-dark"><i class="far fa-envelope fa-lg"></i></a>
-            <p class="text-center">© REVENGERS </p>
-            </div>
-          </div>
-<!--    </div>-->
-<!--  </footer>-->
-
-
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--  <head>-->
-<!--    <title>NaganoCake</title>-->
-<!--    <meta name="viewport" content="width=device-width,initial-scale=1">-->
-<!--    <%#= csrf_meta_tags %>-->
-<!--    <%#= csp_meta_tag %>-->
-
-<!--    <%#= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>-->
-<!--    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>-->
-<!--  </head>-->
-
-<!--  <body>-->
-<!--    <header><%#= render 'layouts/header' %></header>-->
-<!--    <%#= yield %>-->
-<!--    <div class="fixed-bottom"><footer><%#= render 'layouts/footer' %></footer>-->
-<!--    </div>-->
-<!--  </body>-->
-<!--</html>-->
