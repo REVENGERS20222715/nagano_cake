@@ -28,7 +28,7 @@
     		<td>
       		<%= form_with model:@order, url: admin_order_path, local: true do |f| %>
                 <%= f.select :status,[ ["入金待ち",'payment_waiting'], [ "入金確認",'payment_confirmation'], ["製作中",'in_production'], ["発送準備中",'preparing_deliver'], ["発送済み",'delivered'] ]%>
-                <%= f.submit "更新", class: 'btn btn-primary' %>
+                <%= f.submit "更新", class: 'btn btn-outline-primary' %>
           <% end %>
     		</td>
 			</tr>
@@ -56,7 +56,7 @@
              <td>
                 <%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), local: true do |f| %>
                   <%= f.select :making_status, [["製作不可",'cannot'], ["製作待ち",'awaiting'], ["製作中",'in_production'], ["製作完了",'complete'] ]%>
-                  <%= f.submit "更新", class: 'btn btn-primary' %>
+                  <%= f.submit "更新", class: 'btn btn-outline-primary' %>
                 <% end %>
               </td>
              </tr>
