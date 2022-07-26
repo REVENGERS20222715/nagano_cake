@@ -9,11 +9,11 @@
 
 
         <%= link_to public_customers_edit_path(current_customer) do %>
-        <button type="button" class="btn btn-primary">退会しない</button>
+        <button type="button" class="btn btn-outline-primary">退会しない</button>
         <% end %>
 
         <%= link_to public_customers_withdraw_path(current_customer), method: :PATCH, data: {confirm: "本当に退会してもよろしいですか？"} do %>
-        <button type="button" class="btn btn-danger">退会する</button>
+        <button type="button" class="btn btn-outline-danger">退会する</button>
         <% end %>
     </div>
   </div>

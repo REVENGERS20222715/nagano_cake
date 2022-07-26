@@ -1,18 +1,18 @@
 <div class="container">
   <h5>ジャンル一覧・追加</h5>
+  <%= form_with model: @genre, url: admin_genres_path do |f| %>
   <table class='table table-bordered'>
     <thead>
-      <%= form_with model: @genre, url: admin_genres_path do |f| %>
-        <div class="form-group">
+      <div class="form-group">
           <%= f.label :"ジャンル名　" %>
           <%= f.text_field :name %>
         </div>
         <div class="form-group">
-          <%= f.submit class: 'btn btn-success' %>
+          <%= f.submit class: 'btn btn-outline-success' %>
         </div>
-      <% end %>
     </thead>
   </table>
+  <% end %>
   <div class="row">
     <div class="col-md-4">
       <table class="table">
@@ -29,7 +29,7 @@
               <td></td>
               <td><%= genre.name %></td>
               <td>
-                <%= link_to '編集', edit_admin_genre_path(genre), class: "btn btn-sm btn-success" %>
+                <%= link_to '編集', edit_admin_genre_path(genre), class: "btn btn-sm btn-outline-success" %>
               </td>
             </tr>
           <% end %>
