@@ -7,12 +7,11 @@
   <tbody>
     <% genres.each do |genre| %>
       <tr>
-　　　　<!--                              カラム名　genre(変数)のid-->
+        <!--                              カラム名  genre(変数)のid-->
         <td><%= link_to public_items_path(genre_id: genre.id, genre_name: genre.name) do %>
-          <%= genre.name %><% end %>
+            <%= genre.name %>
+            <% end %>
         </td>
-
-
       </tr>
     <% end %>
   </tbody>

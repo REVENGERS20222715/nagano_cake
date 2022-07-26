@@ -21,30 +21,13 @@
             <th><%= f.text_field :last_name, autofocus: true, autocomplete: "名" %></th>
           </tr>
 
-        <!--<div class="field">-->
-        <!--  <%#= f.label :last_name %><br />-->
-        <!--  <%#= f.email_field :last_name, autofocus: true, autocomplete: "名" %>-->
-        <!--</div>-->
-
-          <tr>
-            <th>
-              <h5>フリガナ</h5>
-            </th>
-
             <th><%= f.label :"(セイ)" %></th>
             <th><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "セイ" %></th>
-
 
             <th><%= f.label :"(メイ)" %></th>
             <th><%= f.text_field :last_name_kana, autofocus: true, autocomplete: "メイ" %></th>
 
           </tr>
-
-        <!--<div class="field">-->
-        <!--  <%#= f.label :last_name_kana %><br />-->
-        <!--  <%#= f.email_field :last_name_kana, autofocus: true, autocomplete: "メイ" %>-->
-        <!--</div>-->
-
           <tr>
             <th>
               <h5>メールアドレス</h5>
@@ -81,7 +64,6 @@
             <th></th>
           </tr>
 
-
           <tr>
             <th>
               <h5>電話番号(ハイフンなし)</h5>
@@ -93,7 +75,6 @@
             <th></th>
             <th></th>
           </tr>
-
 
           <tr>
           <th>
@@ -121,7 +102,6 @@
           <th></th>
           </tr>
 
-
           <tr>
             <th>
               <div class="actions">
@@ -131,8 +111,6 @@
             <th></th><th></th><th></th><th></th>
           </tr>
         </table>
-
-
 
             <h2>既に登録済みの方</h2>
             <%= render "public/shared/links" %><h5>からログインしてください</h5>
