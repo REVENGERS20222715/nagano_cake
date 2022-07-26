@@ -20,12 +20,17 @@
             <th><%= f.label :"(名)" %></th>
             <th><%= f.text_field :last_name, autofocus: true, autocomplete: "名" %></th>
           </tr>
-
+          
+           <tr>
+            <th>
+              <h5>フリガナ</h5>
+            </th>
             <th><%= f.label :"(セイ)" %></th>
             <th><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "セイ" %></th>
 
             <th><%= f.label :"(メイ)" %></th>
             <th><%= f.text_field :last_name_kana, autofocus: true, autocomplete: "メイ" %></th>
+           </tr>
 
           </tr>
           <tr>
