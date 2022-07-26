@@ -23,24 +23,28 @@
             <div class='row border-bottom py-1'>
                 <tbody>
                     <% @items.each do |item| %>
-                    <tr>
-                    <td class='col-sm-1'><%= item.id %>
-                    </td>
-                    <td class='col-sm-2'><%= link_to admin_item_path(item) do %>
-                            <%= item.name %>
-                        <% end %>
-                    </td>
-                    <td class='col-sm-2'><%= item.price %>
-                    </td>
-                    <td class='col-sm-2'><%= item.genre.name %>
-                    </td>
-                    <% if item.is_active? == false %>
-                        <td class="text-danger">販売停止中</td>
-                    <% else %>
-                        <td class="text-success">販売中</td>
-                    <% end %>
-                    </td>
-                    </tr>
+                        <tr>
+                            <td class='col-sm-1'>
+                                <%= item.id %>
+                            </td>
+                            <td class='col-sm-2'>
+                                <%= link_to admin_item_path(item) do %>
+                                    <%= item.name %>
+                                <% end %>
+                            </td>
+                            <td class='col-sm-2'>
+                                <%= item.price %>
+                            </td>
+                            <td class='col-sm-2'>
+                                <%= item.genre.name %>
+                            </td>
+                            <% if item.is_active? == false %>
+                                <td class="text-danger">販売停止中</td>
+                            <% else %>
+                                <td class="text-success">販売中</td>
+                            <% end %>
+                            </td>
+                        </tr>
                     <% end %>
                 </tbody>
             </div>
