@@ -10,7 +10,7 @@ Instagramから人気となり、全国から注文が来るようになった�
 
 ## Dependency
 
->  Ruby on rails (5.2.4) 
+>  Ruby on rails (6.1.４) 
 >  HTML&CSS  
 >  Javascript
 
