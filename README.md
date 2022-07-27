@@ -49,7 +49,7 @@ Instagramから人気となり、全国から注文が来るようになった�
 
 
 ## Authors
-チーム　REVENGERZ
+チーム　REVENGERS
 - 小笠原和磨
 - 西尾向日葵
 - 松木仁美
