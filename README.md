@@ -1,5 +1,6 @@
 
-# **ながのCAKE**
+# **ながのCAKE**![c84e50530b20402dba5556053faee9cb vfs cloud9 ap-northeast-1 amazonaws com_](https://user-images.githubusercontent.com/105265063/181199615-1f5d7359-dcef-4335-a58c-2d89ff50fe40.png)
+
 長野県にある小さな洋菓子店「ながのCAKE」の商品を通販するためのECサイト
 
 
