@@ -1,0 +1,39 @@
+<div class='container-fluid'>
+      <div class='row'>
+        <div class='col-md-2'>
+          <p id="notice"></p>
+          <%= render 'genre_index', genres: @genres %>
+        </div>
+        <p id="notice"></p>
+            <div class='col-md-10'>
+                <div align="center">
+                    <%= image_tag "top.jpg", size: "1065x680" %>
+                    <h2>新着商品</h2>
+                      <div class='row'>
+                                <br>
+                          <% @items.each do |item| %>
+                          <div class='col-md-3'>
+                            <div class="item-box">
+                              <%= link_to public_item_path(item) do %>
+                              <div class="item-image">
+                                <% if item.image.attached? %>
+                                  <%= image_tag item.image, size: "280x210" %>
+                                <% else %>
+                                  <%= image_tag 'no_image.jpeg', size: "280x210" %>
+                                <% end %>
+                              </div>
+                              <div class="item-name-price">
+                                <div class="item-name text-center"><%= item.name %></div>
+                                <div class="item-price text-center">¥<%= (item.price * 110 / 100).to_s(:delimited) %>(税込)
+                                </div>
+                              </div>
+                              <% end %>
+                            </div>
+                          </div>
+                          <% end %>
+                    　</div>
+                            <%= paginate @items %>
+                </div>
+        　　</div>
+        </div>
+    </div>
