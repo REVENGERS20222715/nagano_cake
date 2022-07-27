@@ -27,7 +27,7 @@
   			<th class='col-sm-3'>注文ステータス</th>
     		<td>
       		<%= form_with model:@order, url: admin_order_path, local: true do |f| %>
-                <%= f.select :status,[ ["入金待ち",'payment_waiting'], [ "入金確認",'payment_confirmation'], ["製作中",'in_production'], ["発送準備中",'preparing_deliver'], ["発送済み",'delivered'] ]%>
+                <%= f.select :status,[ ["入金待ち",'payment_waiting'], [ "入金確認",'payment_confirmation'], ["製作中",'in_production'], ["発送準備中",'preparing_delivery'], ["発送済み",'delivered'] ]%>
                 <%= f.submit "更新", class: 'btn btn-outline-primary' %>
           <% end %>
     		</td>
